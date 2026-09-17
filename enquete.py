@@ -5,7 +5,10 @@ def cadastrar_opcao (opcoes,votos):
   print("Opção cadastrada com sucesso")
 
 def listar_opcoes(opcoes):
-  if len(opcoes) == 0:
-    print("Nenhuma opção cadastrada ainda.")
-    return
-  print("----Opções cadastradas----")
+    if len(opcoes) == 0:
+        print("Nenhuma opção cadastrada ainda.")
+        return
+
+    print("----- Opções cadastradas -----")
+    for i in range(len(opcoes)):
+        print(i, "-", opcoes[i])
