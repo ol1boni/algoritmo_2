@@ -26,3 +26,25 @@ def registrar_voto(opcoes, votos):
     else:
         votos[posicao] = votos[posicao] + 1
         print("Voto registrado em:", opcoes[posicao])
+
+def consultar_quantidade_votos(opcoes, votos):
+    if len(opcoes) == 0:
+        print("Não há opções cadastradas.")
+        return
+
+    listar_opcoes(opcoes)
+    posicao = int(input("Digite o número da opção: "))
+
+    if posicao < 0 or posicao >= len(opcoes):
+        print("Opção inválida.")
+    else:
+        print(opcoes[posicao], "possui", votos[posicao], "voto(s).")
+
+def mostrar_resultado(opcoes, votos):
+    if len(opcoes) == 0:
+        print("Não há opções cadastradas.")
+        return
+    
+    total = 0
+    for v in votos:
+        total = total + v
