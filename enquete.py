@@ -98,4 +98,11 @@ def mostrar_menu():
     print("6 - Mostrar opção vencedora")
     print("7 - Encerrar")
 
-            
+
+opcoes = []
+votos = []
+opcao_escolhida = 0
+
+while opcao_escolhida != 7:
+    mostrar_menu()
+    opcao_escolhida = int(input("Digite a opção desejada: "))
