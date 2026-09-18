@@ -99,10 +99,31 @@ def mostrar_menu():
     print("7 - Encerrar")
 
 
-opcoes = []
-votos = []
-opcao_escolhida = 0
-
-while opcao_escolhida != 7:
-    mostrar_menu()
-    opcao_escolhida = int(input("Digite a opção desejada: "))
+while escolha != 7:
+    escolha = int(input("Digite um dos seguintes números para escolher uma opção: \n 1. Cadastrar Opção. \n 2. Listar Opções. \n 3. Registrar Voto \n 4. Consultar Quantidade de Votos. \n 5. Mostrar Resultado. \n 6. Mostrar Opção Vencedora \n 7. Encerrar \n\n> "))
+    if escolha == 1:
+        cadastrar_opcao(opcoes, votos)
+    elif escolha == 2:
+        print(f"lista atual de opções: {opcoes}\n")
+    elif escolha == 3:
+        registrar_voto(opcoes, votos)
+    elif escolha == 4:
+        print(f"{sum(votos)} votos totais.")
+    elif escolha == 5:
+        if len(opcoes) == 0:
+            print("Nenhuma opção válida registrada.")
+        elif sum(votos) == 0:
+            print("Nenhum voto válido registrado")
+        else:
+            print("Nenhuma opção válida registrada.")
+    elif escolha == 6:
+        if len(opcoes) == 0:
+            print("Nenhuma opção válida registrada.")
+        elif sum(votos) == 0:
+            print("Nenhum voto válido registrado")
+        else:
+            mostrar_vencedor(opcoes, votos)
+    elif escolha == 7:
+        print("Encerrando o programa...")
+    else:
+        print("Opção Inválida!")
