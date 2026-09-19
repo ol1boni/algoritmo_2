@@ -83,6 +83,7 @@ def menu():
       elif escolha == '6':
           mostrar_vencedora(opcoes, votos)
       elif escolha == '7':
+          print("Votação encerrada")
           break
       else:
           print("Opção inválida. Tente novamente.")
